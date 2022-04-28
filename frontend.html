@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      #container {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        grid-template-rows: repeat(4, auto);
+        gap: 20px;
+      }
+      p + img {
+        height: 50px;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Frontend</h1>
+    <div id="container"></div>
+  </body>
+</html>
+
+<script>
+  var mac = JSON.parse(localStorage.getItem("look")) || [];
+  // console.log(mac);
+
+ mac.forEach(function (elem){
+
+    var div = document.createElement("div");
+  var img = document.createElement("img");
+  img.setAttribute("src",img);
+  img.innerText = elem.personimg
+  
+  var name = document.createElement("p");
+  name.innerText =  elem.personname
+  var role = document.createElement("p");
+  role.innerText = elem.personrole;
+
+  var logo = document.createElement("img");
+  logo.setAttribute("src",logo);
+  logo.innerText = elem.logo;
+
+  div.append(img,name,role,logo);
+  document.querySelector("#container").append(div);
+
+
+  });
+ 
+
+
+  
+  
+
+</script>
